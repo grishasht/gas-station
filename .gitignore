@@ -17,6 +17,6 @@ target/
 *.ipr
 
 ### My ###
-mvnw
-mvnw.cmd
+backend/mvnw
+backend/mvnw.cmd
 HELP.md
