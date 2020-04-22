@@ -27,6 +27,7 @@
 <body>
 
 <!-- TOP SIDE -->
+
 <div style="width: 100%; height: auto; background: #E6E6FA">
     <nav class="navbar navbar-expand-lg navbar-light">
 
@@ -35,12 +36,12 @@
             <ul class="navbar-nav mr-auto">
                 <nav class="navbar navbar-expand-lg navbar-light" style="background: #E6E6FA ">
                     <a class="navbar-brand" href="index.html">
-                        <img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-left: 30px">
-                        АЗС
+                        <img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                        На Головну
                     </a>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="#" style="margin-left: 50px">Новини і Акції</a>
+                            <a class="nav-item nav-link" href="#">Новини і Акції</a>
                             <a class="nav-item nav-link" href="#">Вакансії</a>
                             <a class="nav-item nav-link" href="#">Контакти</a>
                             <a class="nav-item nav-link" href="#">Про Нас</a>
@@ -55,7 +56,7 @@
 
             <form class="form-inline my-2 my-lg-0">
                 <a class="btn btn-#E6E6FA" href="login.html" role="button">Вхід</a>
-                <a class="btn btn-#E6E6FA" href="registration.html" role="button">Регістрація</a>
+                <a class="btn btn-#E6E6FA disabled" href="registration.html" role="button">Регістрація</a>
             </form>
         </div>
     </nav>
@@ -63,45 +64,44 @@
 
 <!-- MIDDLE SIDE -->
 
-
-<!-- LEFT MENU -->
-<div class="container-fluid">
-    <div class="row">
-        <div style="width: 200px; height: 1000px; background: #E6E6FA">
-            <div class="col-sm">
-                <div class="container">
-                    <nav class="navbar">
-                        <!-- Links -->
-                        <ul class="navbar-nav" style="text-align: center">
-                            <li class="nav-item">
-                                <p></p>
-                                <p><a href="#" class="text-dark"><h5>Сітка АЗС</h5></a></p>
-                            </li>
-                            <li class="nav-item">
-                                <p><a href="#" class="text-dark"><h5>Партнерство</h5></a></p>
-                            </li>
-                            <li class="nav-item">
-                                <p><a href="login.html" class="text-dark"><h5>Особистий кабінет</h5></a></p>
-                            </li>
-                            <li class="nav-item">
-                                <p><a href="#" class="text-dark"><h5>Талони</h5></a></p>
-                            </li>
-                            <li class="nav-item">
-                                <p><a href="#" class="text-dark"><h5>Палевні карти</h5></a></p>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+<div class="container" style="margin-left: 400px; width: 700px; height: 700px; margin-top: 150px">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Пароль</label>
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
             </div>
         </div>
-
-        <!-- RIGHT MAIN SIDE -->
-
-        <div class="col-sm" style="background:url(backround.jpg) ">
-            ГАЗНЕФТЬ
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Прізвище</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Surname">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Ім'я</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Name">
+            </div>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Логін</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Login">
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Надсилати акціонні пропозиції
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Зареєструватися</button>
+    </form>
 </div>
+
 
 <!-- UPPER SIDE -->
 
