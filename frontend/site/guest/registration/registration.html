@@ -1,12 +1,12 @@
 <!--<!doctype html>-->
-<!--<html lang="en">-->
+<!--<html lang="en" xmlns="http://www.w3.org/1999/html">-->
 <!--<head>-->
 
 <!--    <meta charset="utf-8">-->
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 <!--    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">-->
 <!--    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">-->
-<!--    &lt;!&ndash;    <link rel="stylesheet" href="site/css/style-grid.css">&ndash;&gt;-->
+<!--    <link rel="stylesheet" href="site/css/style-grid.css">-->
 
 <!--    <script src="bootstrap/js/bootstrap.min.js"></script>-->
 <!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
@@ -25,19 +25,16 @@
 
 <!--</head>-->
 
+
 <!--<body>-->
 
-<!--&lt;!&ndash; TOP SIDE &ndash;&gt;-->
-
+<!--<header id=”topside”>-->
 <!--    <nav class="navbar navbar-expand-lg navbar-light">-->
-
-
 <!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
 <!--            <ul class="navbar-nav mr-auto">-->
-<!--                <nav class="navbar navbar-expand-lg navbar-light" style="background: #E6E6FA ">-->
+<!--                <nav class="navbar navbar-expand-lg navbar-light">-->
 <!--                    <a class="navbar-brand" href="index.html">-->
-<!--                        <img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt=""-->
-<!--                             style="margin-left: 30px">-->
+<!--                        <img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">-->
 <!--                        АЗС-->
 <!--                    </a>-->
 <!--                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
@@ -56,63 +53,83 @@
 
 <!--            <form class="form-inline my-2 my-lg-0">-->
 <!--                <a class="btn btn-#E6E6FA" href="login.html" role="button">Вхід</a>-->
-<!--                <a class="btn btn-#E6E6FA" href="site/guest/registration/registration.html"-->
+<!--                <a class="btn btn-#E6E6FA disabled" href="site/guest/registration/registration.html"-->
 <!--                   role="button">Регістрація</a>-->
 <!--            </form>-->
 <!--        </div>-->
 <!--    </nav>-->
+<!--</header>-->
 
-<!--&lt;!&ndash; MIDDLE SIDE &ndash;&gt;-->
-
-
-<!--&lt;!&ndash; LEFT MENU &ndash;&gt;-->
-<!--<div class="container-fluid">-->
-<!--    <div class="row">-->
-<!--        <div style="width: 200px; height: 1000px; background: #E6E6FA">-->
-<!--            <div class="col-sm">-->
-<!--                <div class="container">-->
-<!--                    <nav class="navbar">-->
-<!--                        &lt;!&ndash; Links &ndash;&gt;-->
-<!--                        <ul class="navbar-nav" style="text-align: center">-->
-<!--                            <li class="nav-item">-->
-<!--                                <p></p>-->
-<!--                                <p><a href="#" class="text-dark"><h5>Сітка АЗС</h5></a></p>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <p><a href="#" class="text-dark"><h5>Партнерство</h5></a></p>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <p><a href="login.html" class="text-dark"><h5>Особистий кабінет</h5></a></p>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <p><a href="#" class="text-dark"><h5>Талони</h5></a></p>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <p><a href="#" class="text-dark"><h5>Палевні карти</h5></a></p>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </nav>-->
-<!--                </div>-->
+<!--<div id=”mainside”>-->
+<!--    <form>-->
+<!--        <div class="form-row">-->
+<!--            <div class="form-group col-md-6">-->
+<!--                <label for="login">Логін</label>-->
+<!--                <input type="text" class="form-control" id="login" placeholder="Login">-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-6">-->
+<!--                <label for="password">Пароль</label>-->
+<!--                <input type="password" class="form-control" id="password" placeholder="Password">-->
 <!--            </div>-->
 <!--        </div>-->
-
-<!--        &lt;!&ndash; RIGHT MAIN SIDE &ndash;&gt;-->
-
-<!--        <div class="col-sm" style="background:url(backround.jpg) ">-->
-<!--            ГАЗНЕФТЬ-->
+<!--        <div class="form-row">-->
+<!--            <div class="form-group col-md-6">-->
+<!--                <label for="surname">Прізвище</label>-->
+<!--                <input type="email" class="form-control" id="surname" placeholder="Surname">-->
+<!--            </div>-->
+<!--            <div class="form-group col-md-6">-->
+<!--                <label for="name">Ім'я</label>-->
+<!--                <input type="password" class="form-control" id="name" placeholder="Name">-->
+<!--            </div>-->
 <!--        </div>-->
-<!--    </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="email">Email</label>-->
+<!--            <input type="email" class="form-control" id="email" placeholder="Email">-->
+<!--        </div>-->
+
+<!--        <div class="form-group">-->
+<!--            <div class="form-check">-->
+<!--                <label class="form-check-label">-->
+<!--                    <input class="form-check-input" type="checkbox"> Надсилати акціонні пропозиції-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <button type="button" onclick="registerUser()" class="btn btn-primary">Зареєструватися</button>-->
+<!--    </form>-->
 <!--</div>-->
 
-<!--&lt;!&ndash; UPPER SIDE &ndash;&gt;-->
+<!--<nav id=”leftside”>-->
+<!--    <nav class="navbar">-->
+<!--        &lt;!&ndash; Links &ndash;&gt;-->
+<!--        <ul class="navbar-nav" id="menu">-->
+<!--            <li class="nav-item">-->
+<!--                <p></p>-->
+<!--                <p><a href="#" class="text-dark"><h5>Сітка АЗС</h5></a></p>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <p><a href="#" class="text-dark"><h5>Партнерство</h5></a></p>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <p><a href="login.html" class="text-dark"><h5>Особистий кабінет</h5></a></p>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <p><a href="#" class="text-dark"><h5>Талони</h5></a></p>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <p><a href="#" class="text-dark"><h5>Палевні карти</h5></a></p>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</nav>-->
 
-<!--<div class="p-3 mb-3 text-white" style="background: #E6E6FA">-->
+
+<!--&lt;!&ndash;<div id=”siteAds”>Ads</div>&ndash;&gt;-->
+
+<!--<footer id=”botside”>-->
 <!--    ООО ГАЗНЕФТЬ-->
-<!--</div>-->
-
+<!--</footer>-->
 
 <!--</body>-->
-
 <!--</html>-->
 
 <!doctype html>
@@ -169,7 +186,7 @@
             <!-- REGISTRATION AND LOGIN -->
 
             <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-#E6E6FA" href="login.html" role="button">Вхід</a>
+                <a class="btn btn-#E6E6FA disabled" href="login.html" role="button">Вхід</a>
                 <a class="btn btn-#E6E6FA" href="site/guest/registration/registration.html"
                    role="button">Регістрація</a>
             </form>
@@ -177,33 +194,51 @@
     </nav>
 </header>
 
-    <div id=”mainside”>
-        MAINSIDE
-    </div>
+<div id=”mainside”>
+    <form id="entry">
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group row ">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Пароль</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" onclick="${auto()}">Увійти</button>
+            </div>
+        </div>
+    </form>
+</div>
 
-    <nav id=”leftside”>
-        <nav class="navbar">
-            <!-- Links -->
-            <ul class="navbar-nav" id="menu">
-                <li class="nav-item">
-                    <p></p>
-                    <p><a href="#" class="text-dark"><h5>Сітка АЗС</h5></a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a href="#" class="text-dark"><h5>Партнерство</h5></a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a href="login.html" class="text-dark"><h5>Особистий кабінет</h5></a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a href="#" class="text-dark"><h5>Талони</h5></a></p>
-                </li>
-                <li class="nav-item">
-                    <p><a href="#" class="text-dark"><h5>Палевні карти</h5></a></p>
-                </li>
-            </ul>
-        </nav>
+<nav id=”leftside”>
+    <nav class="navbar">
+        <!-- Links -->
+        <ul class="navbar-nav" id="menu">
+            <li class="nav-item">
+                <p></p>
+                <p><a href="#" class="text-dark"><h5>Сітка АЗС</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="#" class="text-dark"><h5>Партнерство</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="login.html" class="text-dark"><h5>Особистий кабінет</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="#" class="text-dark"><h5>Талони</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="#" class="text-dark"><h5>Палевні карти</h5></a></p>
+            </li>
+        </ul>
     </nav>
+</nav>
 
 
 <!--<div id=”siteAds”>Ads</div>-->

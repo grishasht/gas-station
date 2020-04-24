@@ -3,12 +3,12 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="site/css/style-grid.css">
+
     <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -21,31 +21,28 @@
 
     <!--    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>-->
     <!--    <script src="bootstrap/js/popper.js"></script>-->
+    <!--    <script src="site/css/style-grid.css"></script>-->
 
 </head>
 
+
 <body>
 
-<!-- TOP SIDE -->
-
-<div style="width: 100%; height: auto; background: #E6E6FA">
+<header id=”topside”>
     <nav class="navbar navbar-expand-lg navbar-light">
-
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <nav class="navbar navbar-expand-lg navbar-light" style="background: #E6E6FA ">
+                <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="index.html">
                         <img src="logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-                        На Головну
+                        АЗС
                     </a>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="#">Новини і Акції</a>
+                            <a class="nav-item nav-link" href="#" style="margin-left: 50px">Новини і Акції</a>
                             <a class="nav-item nav-link" href="#">Вакансії</a>
                             <a class="nav-item nav-link" href="#">Контакти</a>
                             <a class="nav-item nav-link" href="#">Про Нас</a>
-                            <!--            <a class="nav-item nav-link disabled" style="margin-left: 1200px" href="#">Disabled</a>-->
                         </div>
                     </div>
                 </nav>
@@ -56,17 +53,15 @@
 
             <form class="form-inline my-2 my-lg-0">
                 <a class="btn btn-#E6E6FA disabled" href="login.html" role="button">Вхід</a>
-                <a class="btn btn-#E6E6FA" href="registration.html" role="button">Регістрація</a>
+                <a class="btn btn-#E6E6FA" href="site/guest/registration/registration.html"
+                   role="button">Регістрація</a>
             </form>
         </div>
     </nav>
-</div>
-<!-- MIDDLE SIDE -->
+</header>
 
-
-<!-- RIGHT MAIN SIDE -->
-<div class="container" style="margin-left: 400px; width: 500px; height: 600px; margin-top: 200px">
-    <form>
+<div id=”mainside”>
+    <form id="entry">
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
@@ -87,14 +82,36 @@
     </form>
 </div>
 
+<nav id=”leftside”>
+    <nav class="navbar">
+        <!-- Links -->
+        <ul class="navbar-nav" id="menu">
+            <li class="nav-item">
+                <p></p>
+                <p><a href="#" class="text-dark"><h5>Сітка АЗС</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="#" class="text-dark"><h5>Партнерство</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="login.html" class="text-dark"><h5>Особистий кабінет</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="#" class="text-dark"><h5>Талони</h5></a></p>
+            </li>
+            <li class="nav-item">
+                <p><a href="#" class="text-dark"><h5>Палевні карти</h5></a></p>
+            </li>
+        </ul>
+    </nav>
+</nav>
 
-<!-- UPPER SIDE -->
 
-<div class="p-3 mb-3 text-white" style="background: #E6E6FA">
+<!--<div id=”siteAds”>Ads</div>-->
+
+<footer id=”botside”>
     ООО ГАЗНЕФТЬ
-</div>
-
+</footer>
 
 </body>
-
 </html>
