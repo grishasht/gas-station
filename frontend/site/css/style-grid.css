@@ -4,10 +4,10 @@ body {
             "topside topside "
             "leftside mainside"
             "botside botside";
-    grid-template-rows: 60px 1fr 60px;
-    grid-template-columns: 20% 1fr 15%;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 15% 1fr ;
     grid-gap: 10px;
-    height: 100vh;
+    min-height:100vh;
     margin: 0;
     background: #E6E6FA;
 }
@@ -17,46 +17,56 @@ body {
 /*    background: gold;*/
 /*}*/
 
-#”topside” {
+#topside {
     grid-row-start: 1;
     grid-column-start: 1;
     grid-row-end: 2;
-    grid-column-end:8;
+    grid-column-end: 8;
 }
 
-#”botside” {
-    grid-row-start: 9;
+#botside {
+    grid-row-start: 14;
     grid-column-start: 1;
-    grid-row-end: 12;
-    grid-column-end:8;
+    grid-row-end: 16;
+    grid-column-end: 8;
 }
 
-#”mainside” {
+#mainside {
     grid-row-start: 2;
     grid-column-start: 2;
-    grid-row-end: 8;
+    grid-row-end: 14;
     grid-column-end: 8;
     background: white;
 }
 
-#”leftside” {
+#leftside {
     grid-row-start: 2;
     grid-column-start: 1;
-    grid-row-end: 8;
-    grid-column-end:1;
-    background:#f8f9fa ;
+    grid-row-end: 14;
+    grid-column-end: 1;
+    background: #f8f9fa;
     text-align: left;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 
 }
 
-#menu{
+#menu {
     margin-top: 10px;
     margin-left: 20px;
 }
 
-#entry{
+#entry {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+}
+
+
+#registration {
+    width: 60%;
     margin-top: 200px;
     margin-left: 200px;
-    width: 30%;
 }
