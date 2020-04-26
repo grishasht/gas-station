@@ -5,7 +5,7 @@ import ua.kpi.dziuba.gasstation.gstation.model.ITariff;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "tariffs")
 public class Tariff implements ITariff {
     @Id
     @GeneratedValue

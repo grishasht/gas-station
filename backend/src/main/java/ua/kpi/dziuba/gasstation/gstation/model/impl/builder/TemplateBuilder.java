@@ -1,6 +1,5 @@
 package ua.kpi.dziuba.gasstation.gstation.model.impl.builder;
 
-import ua.kpi.dziuba.gasstation.gstation.model.ITemplate;
 import ua.kpi.dziuba.gasstation.gstation.model.impl.Template;
 
 public class TemplateBuilder {
@@ -12,7 +11,7 @@ public class TemplateBuilder {
         return new TemplateBuilder();
     }
 
-    public ITemplate build(){
+    public Template build(){
         return new Template();
     }
 }

@@ -1,6 +1,5 @@
 package ua.kpi.dziuba.gasstation.gstation.model.impl.builder;
 
-import ua.kpi.dziuba.gasstation.gstation.model.ITariff;
 import ua.kpi.dziuba.gasstation.gstation.model.impl.Tariff;
 
 public class TariffBuilder {
@@ -19,7 +18,7 @@ public class TariffBuilder {
         return this;
     }
 
-    public ITariff build() {
+    public Tariff build() {
         return new Tariff(price);
     }
 }

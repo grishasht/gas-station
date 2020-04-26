@@ -1,6 +1,5 @@
 package ua.kpi.dziuba.gasstation.gstation.model.impl.builder;
 
-import ua.kpi.dziuba.gasstation.gstation.model.IUser;
 import ua.kpi.dziuba.gasstation.gstation.model.impl.User;
 
 import java.util.UUID;
@@ -56,7 +55,7 @@ public class UserBuilder {
         return this;
     }
 
-    public IUser build(){
+    public User build(){
         return new User(name, surname, login, passwordHash, email);
     }
 }

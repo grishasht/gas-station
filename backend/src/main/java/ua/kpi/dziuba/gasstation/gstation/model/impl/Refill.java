@@ -5,7 +5,7 @@ import ua.kpi.dziuba.gasstation.gstation.model.IRefill;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "refills")
 public class Refill implements IRefill {
     @Id
     @GeneratedValue

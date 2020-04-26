@@ -1,6 +1,5 @@
 package ua.kpi.dziuba.gasstation.gstation.model.impl.builder;
 
-import ua.kpi.dziuba.gasstation.gstation.model.IFuel;
 import ua.kpi.dziuba.gasstation.gstation.model.impl.Fuel;
 
 public class FuelBuilder {
@@ -27,7 +26,7 @@ public class FuelBuilder {
         return this;
     }
 
-    public IFuel build(){
+    public Fuel build(){
         return new Fuel(type, name);
     }
 }

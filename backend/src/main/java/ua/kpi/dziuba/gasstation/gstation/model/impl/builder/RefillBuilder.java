@@ -1,6 +1,5 @@
 package ua.kpi.dziuba.gasstation.gstation.model.impl.builder;
 
-import ua.kpi.dziuba.gasstation.gstation.model.IRefill;
 import ua.kpi.dziuba.gasstation.gstation.model.impl.Refill;
 
 public class RefillBuilder {
@@ -12,7 +11,7 @@ public class RefillBuilder {
         return new RefillBuilder();
     }
 
-    public IRefill build(){
+    public Refill build(){
         return new Refill();
     }
 }

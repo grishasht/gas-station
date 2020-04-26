@@ -5,7 +5,7 @@ import ua.kpi.dziuba.gasstation.gstation.model.ITemplate;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "templates")
 public class Template implements ITemplate {
     @Id
     @GeneratedValue
