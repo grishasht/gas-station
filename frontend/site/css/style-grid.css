@@ -29,6 +29,7 @@ body {
     grid-column-start: 1;
     grid-row-end: 16;
     grid-column-end: 8;
+    text-align: center;
 }
 
 #mainside {
@@ -70,3 +71,9 @@ body {
     margin-top: 200px;
     margin-left: 200px;
 }
+
+#img_1, #img_2, #img_3{
+width: 100%;
+}
+
+

@@ -13,7 +13,7 @@ app.listen(serverPort, function () {
 
 });
 
-// TODO: consider about better solution
+
 function readHtmlFile(req, res, filePath){
 fileSystem.readFile(filePath, function(error, fileContent){
     if(error){
@@ -42,6 +42,14 @@ app.get('/guest/signup', (req, res) => {
 
 app.get('/guest/signin', (req, res) => {
     readHtmlFile(req, res, 'site/guest/signin/sign-in.html');
+});
+
+app.get('/user', (req, res) => {
+    readHtmlFile(req, res, 'site/user/index.html');
+});
+
+app.get('/user/personal', (req, res) => {
+    readHtmlFile(req, res, 'site/user/personal.html');
 });
 
 console.log('Listening at: localhost:8080');
