@@ -76,4 +76,19 @@ body {
 width: 100%;
 }
 
+#info{
+    margin-left: 100px;
+    margin-top: 20px;
+    width: 50%;
+    font-size: large;
+    font-weight: lighter;
+}
+
+#personalphoto{
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 10%;
+    height: 20%;
+}
+
 
