@@ -56,4 +56,9 @@ app.get('/user/personal-change', (req, res) => {
     readHtmlFile(req, res, 'site/user/personal-change.html');
 });
 
+app.get('/user/buy-fuel', (req, res) => {
+    readHtmlFile(req, res, 'site/user/buy-fuel.html');
+});
+
+
 console.log('Listening at: localhost:8080');
