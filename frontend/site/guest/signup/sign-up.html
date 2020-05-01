@@ -2,18 +2,28 @@
 <html lang="en">
 <head>
 
-    <title>Реєстрація</title>
+    <title>Вхід</title>
 
     <meta charset="utf-8">
-    <!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-grid.css">
-    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style-grid.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/style-grid.css">
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="../../axios.min.js"></script>
-    <script type="text/javascript" src="./sign-up.js"></script>
+    <!--    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>-->
+    <!--    <script src="bootstrap/js/popper.js"></script>-->
+    <!--    <script src="site/css/style-grid.css"></script>-->
 
 </head>
 
@@ -21,40 +31,46 @@
 <body>
 
 <header id="topside">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light  bg-light">
+        <a class="navbar-brand" href="http://localhost:8080/main-page">
+            <img src="../../image/logo.jpg" width="32" height="32" class="d-inline-block align-top" alt="">
+            На головну
+        </a>
+        <button class="navbar-toggler bg-light" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="http://localhost:8080/main-page">
-                        <img src="../../image/logo.jpg" width="30" height="30" class="d-inline-block align-top"
-                             alt="">
-                        На головну
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="#" style="margin-left: 50px">Новини і Акції</a>
-                            <a class="nav-item nav-link" href="#">Вакансії</a>
-                            <a class="nav-item nav-link" href="#">Контакти</a>
-                            <a class="nav-item nav-link" href="#">Про Нас</a>
-                        </div>
-                    </div>
-                </nav>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Про нас </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакти</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Новини</a>
+                </li>
+
             </ul>
+            <a class="btn" href="http://localhost:8080/guest/signin" role="button">Вхід</a>
+            <a class="btn disabled" href="http://localhost:8080/guest/signup" role="button">Реєстрація</a>
 
-
-            <!-- REGISTRATION AND LOGIN -->
-
-            <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-#E6E6FA" href="http://localhost:8080/guest/signin" role="button">Вхід</a>
-                <a class="btn btn-#E6E6FA disabled" href="http://localhost:8080/guest/signup"
-                   role="button">Реєстрація</a>
-            </form>
         </div>
     </nav>
 </header>
 
+
 <div id="mainside">
-    <form id="registration">
+
+    <div id="choose">
+        <h3 style="text-align: center">Для рєєстрації введіть, будь ласка, вказані нижче дані</h3>
+        <img src="../../image/down.jpg" alt="">
+    </div>
+    <p></p>
+    <div id="registration">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="login">Логін</label>
@@ -87,37 +103,10 @@
                 </label>
             </div>
         </div>
-        <button type="button" id="submitRegisterData" onclick="registerUser()" class="btn btn-primary">Зареєструватися</button>
-    </form>
+        <button type="button" id="submitRegisterData" onclick="registerUser()" class="btn btn-primary">Зареєструватися
+        </button>
+    </div>
 </div>
-
-
-<nav id="leftside">
-    <nav class="navbar">
-        <!-- Links -->
-        <ul class="navbar-nav" id="menu">
-            <li class="nav-item">
-                <p></p>
-                <p><a href="#" class="text-dark">Сітка АЗС</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="#" class="text-dark">Партнерство</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="http://localhost:8080/guest/signin" class="text-dark">Придбати пальне</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="#" class="text-dark">Талони</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="#" class="text-dark">Палевні карти</a></p>
-            </li>
-        </ul>
-    </nav>
-</nav>
-
-
-<!--<div id=”siteAds”>Ads</div>-->
 
 <footer id="botside">
     <p></p>
@@ -126,3 +115,69 @@
 
 </body>
 </html>
+
+
+<!--    <div id="choose">-->
+<!--        <h3 style="text-align: center">Для рєєстрації введіть, будь ласка, вказані нижче дані</h3>-->
+<!--        <img src="../../image/down.jpg" alt="">-->
+<!--    </div>-->
+
+<!--    <div id="registration">-->
+<!--        <div class="form-group row">-->
+<!--            <label for="inputEmail3" class="col-form-label">Email:</label>-->
+<!--            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">-->
+<!--        </div>-->
+<!--        <div class="form-group row ">-->
+<!--            <label for="inputPassword3" class=" col-form-label">Пароль:</label>-->
+<!--            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <label for="inputEmail3" class="col-form-label">Email:</label>-->
+<!--            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">-->
+<!--        </div>-->
+<!--        <div class="form-group row ">-->
+<!--            <label for="inputPassword3" class=" col-form-label">Пароль:</label>-->
+<!--            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
+<!--        </div>-->
+<!--        <div class="form-group row ">-->
+<!--            <label for="inputPassword3" class=" col-form-label">Пароль:</label>-->
+<!--            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <a class="btn btn-primary" id="submitRegisterData" onclick="registerUser()"-->
+<!--               href="http://localhost:8080/user/personal">Увійти</a>-->
+<!--        </div>-->
+<!--</div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="form-group">-->
+<!--                <label for="login">Логін</label>-->
+<!--                <input type="text" class="form-control" id="login" placeholder="Login">-->
+<!--            </div>-->
+<!--            <div class="form-group ">-->
+<!--                <label for="password">Пароль</label>-->
+<!--                <input type="password" class="form-control" id="password" placeholder="Password">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-row">-->
+<!--            <div class="form-group ">-->
+<!--                <label for="surname">Прізвище</label>-->
+<!--                <input type="email" class="form-control" id="surname" placeholder="Surname">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="name">Ім'я</label>-->
+<!--                <input type="password" class="form-control" id="name" placeholder="Name">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="email">Email</label>-->
+<!--            <input type="email" class="form-control" id="email" placeholder="Email">-->
+<!--        </div>-->
+
+<!--        <div class="form-group">-->
+<!--            <div class="form-check">-->
+<!--                <label class="form-check-label">-->
+<!--                    <input class="form-check-input" type="checkbox"> Надсилати акціонні пропозиції-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <button type="button" id="submitRegisterData" onclick="registerUser()" class="btn btn-primary">Зареєструватися</button>-->

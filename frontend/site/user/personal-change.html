@@ -5,7 +5,7 @@
     <title>Особистий кабінет</title>
 
     <meta charset="utf-8">
-    <!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="/css/style-grid.css">
@@ -31,80 +31,75 @@
 <body>
 
 <header id="topside">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light  bg-light">
+        <a class="navbar-brand" href="http://localhost:8080/user">
+            <img src="../../image/logo.jpg" width="32" height="32" class="d-inline-block align-top" alt="">
+            На головну
+        </a>
+        <button class="navbar-toggler bg-light" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="http://localhost:8080/user">
-                        <img src="../image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-                        АЗС
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="#" style="margin-left: 50px">Новини і Акції</a>
-                            <a class="nav-item nav-link" href="#">Вакансії</a>
-                            <a class="nav-item nav-link" href="#">Контакти</a>
-                            <a class="nav-item nav-link" href="#">Про Нас</a>
-                        </div>
-                    </div>
-                </nav>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Про нас </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакти</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Новини</a>
+                </li>
+
             </ul>
-
-
-            <!-- REGISTRATION AND LOGIN -->
-
-            <form class="form-inline my-2 my-lg-0">
-                <div class="dropdown" id="show">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="../image/user.jpg" alt="" width="30" height="30">
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="http://localhost:8080/user/personal">Профіль</a>
-                        <a class="dropdown-item" href="#">Історія заправок</a>
-                        <a class="dropdown-item" href="http://localhost:8080/user/buy-fuel">Придбати пальне</a>
-                        <a class="dropdown-item" href="http://localhost:8080/main-page">Вихід</a>
-                    </div>
+            <div class="dropdown" id="show">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../image/user.jpg" alt="" width="25" height="25">
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="http://localhost:8080/user/personal">Профіль</a>
+                    <a class="dropdown-item" href="#">Історія заправок</a>
+                    <a class="dropdown-item" href="http://localhost:8080/user/buy-fuel">Придбати пальне</a>
+                    <a class="dropdown-item" href="http://localhost:8080/main-page">Вихід</a>
                 </div>
-            </form>
+            </div>
         </div>
     </nav>
 </header>
 
+
 <div id="mainside">
     <p></p>
     <p><a href="#" class="text-dark" style="float: right; margin-right: 20px";>Історія заправок</a></p>
-    <img src="../image/user.jpg" alt="" id="personalphoto">
-    <div class="form-group" style=" margin-left: 100px; width:20%">
-        <label for="exampleFormControlFile1">Завантажити фото</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
     <form id="info">
-<!--        <div class="form-group row">-->
-<!--            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>-->
-<!--            <div class="col-sm-10">-->
-<!--                -->
-<!--            </div>-->
-<!--        </div>-->
+        <img src="../image/user.jpg" alt="" id="personalphoto">
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Завантажити фото</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Ім'я</label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="name" value="admin">
-                <input type="password" class="form-control" id="inputnewname" placeholder="Нове ім'я">
+                <input type="text" class="form-control" id="inputnewname" placeholder="Нове ім'я">
             </div>
         </div>
         <div class="form-group row">
             <label for="sur" class="col-sm-2 col-form-label">Прізвище</label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="sur" value="admin">
-                <input type="password" class="form-control" id="inputnewsurname" placeholder="Нове прізвище">
+                <input type="text" class="form-control" id="inputnewsurname" placeholder="Нове прізвище">
             </div>
         </div>
         <div class="form-group row">
             <label for="log" class="col-sm-2 col-form-label">Логін</label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="log" value="admin">
-                <input type="password" class="form-control" id="inputnewlogin" placeholder="Новий логін">
+                <input type="text" class="form-control" id="inputnewlogin" placeholder="Новий логін">
             </div>
         </div>
         <div class="form-group row">
@@ -116,33 +111,6 @@
         <a href="http://localhost:8080/user/personal" class="btn btn-primary active" role="button" aria-pressed="true" >Зберегти зміни</a>
     </form>
 </div>
-
-<nav id="leftside">
-    <nav class="navbar">
-        <!-- Links -->
-        <ul class="navbar-nav" id="menu">
-            <li class="nav-item">
-                <p></p>
-                <p><a href="#" class="text-dark">Сітка АЗС</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="#" class="text-dark">Партнерство</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="http://localhost:8080/user/buy-fuel" class="text-dark">Придбати пальне</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="#" class="text-dark"> Талони</a></p>
-            </li>
-            <li class="nav-item">
-                <p><a href="#" class="text-dark"> Палевні карти </a></p>
-            </li>
-        </ul>
-    </nav>
-</nav>
-
-
-<!--<div id=”siteAds”>Ads</div>-->
 
 <footer id="botside">
     <p></p>

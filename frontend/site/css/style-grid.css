@@ -1,15 +1,12 @@
 body {
     display: grid;
-    grid-template-areas:
-            "topside topside "
-            "leftside mainside"
-            "botside botside";
+    /*grid-template-areas: "topside topside " "leftside mainside" "botside botside";*/
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 15% 1fr ;
-    grid-gap: 10px;
-    min-height:100vh;
+    grid-template-columns: 10% 80% 10%;
+    grid-gap: 3px;
+    min-height: 100vh;
     margin: 0;
-    background: #E6E6FA;
+    background: #343A40;
 }
 
 /*header, footer, article, nav, div {*/
@@ -19,36 +16,26 @@ body {
 
 #topside {
     grid-row-start: 1;
-    grid-column-start: 1;
-    grid-row-end: 2;
-    grid-column-end: 8;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    grid-column-end: 3;
 }
 
 #botside {
     grid-row-start: 14;
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-row-end: 16;
-    grid-column-end: 8;
+    grid-column-end: 3;
     text-align: center;
+    background: #6C757D;
 }
 
 #mainside {
     grid-row-start: 2;
     grid-column-start: 2;
     grid-row-end: 14;
-    grid-column-end: 8;
+    grid-column-end: 3;
     background: white;
-}
-
-#leftside {
-    grid-row-start: 2;
-    grid-column-start: 1;
-    grid-row-end: 14;
-    grid-column-end: 1;
-    background: #f8f9fa;
-    text-align: left;
-    /*margin-left: 10px;*/
-
 }
 
 #menu {
@@ -57,38 +44,44 @@ body {
 }
 
 #entry {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    margin: 17% auto;
     width: 30%;
 }
 
+#choose{
+    margin-top:5%;
+    text-align: center;
+}
 
 #registration {
-    width: 60%;
-    margin-top: 200px;
-    margin-left: 200px;
+    margin-bottom: 15%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
 }
 
-#img_1, #img_2, #img_3{
-width: 100%;
+
+#img_1, #img_2, #img_3 {
+    width: 100%;
 }
 
-#info{
-    margin-left: 100px;
-    margin-top: 20px;
+#info {
+    margin: 6% auto;
     width: 50%;
     font-size: large;
     font-weight: lighter;
 }
 
-#personalphoto{
-    margin-top: 20px;
-    margin-left: 100px;
-    width: 10%;
-    height: 20%;
+#personalphoto {
+    width: 20%;
+    height: 30%;
 }
+
+#buy-fuel {
+    margin: 15% auto;
+    width: 30%;
+    font-size: larger;
+}
+
 
 

@@ -28,6 +28,11 @@ fileSystem.readFile(filePath, function(error, fileContent){
 });
 }
 
+// const permitedUrls = {
+//   'guest': [],
+//   'user': []
+// };
+
 app.get('/', (req, res) => {
     res.redirect(hostUrl + ":" + serverPort + "/main-page");
 });
@@ -57,7 +62,15 @@ app.get('/user/personal-change', (req, res) => {
 });
 
 app.get('/user/buy-fuel', (req, res) => {
-    readHtmlFile(req, res, 'site/user/buy-fuel.html');
+    readHtmlFile(req, res, 'site/user/buyfuel.html');
+});
+
+app.get('/user/buy-price', (req, res) => {
+    readHtmlFile(req, res, 'site/user/buy-price.html');
+});
+
+app.get('/user/buy-info', (req, res) => {
+    readHtmlFile(req, res, 'site/user/buy-info.html');
 });
 
 
