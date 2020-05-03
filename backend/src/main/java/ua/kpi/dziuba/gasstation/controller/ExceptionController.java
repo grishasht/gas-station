@@ -1,11 +1,11 @@
 package ua.kpi.dziuba.gasstation.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
-import ua.kpi.dziuba.gasstation.exception.GasStationException;
 import ua.kpi.dziuba.gasstation.exception.InvalidUserDataException;
 import ua.kpi.dziuba.gasstation.model.impl.Error;
 
@@ -28,8 +28,11 @@ public class ExceptionController {
     }
 
     @ExceptionHandler(InvalidUserDataException.class)
-    public Error handleInvalidDataException(Exception ex, WebRequest request){
-        return new Error(HttpStatus.UNPROCESSABLE_ENTITY.value(), ex.getMessage());
+    public ResponseEntity<Error> handleInvalidDataException(Exception ex, WebRequest request){
+        return ResponseEntity
+                .status(HttpStatus.UNPROCESSABLE_ENTITY)
+                .body(new Error(HttpStatus.UNPROCESSABLE_ENTITY.value(), ex.getMessage()));
+
     }
 
 }

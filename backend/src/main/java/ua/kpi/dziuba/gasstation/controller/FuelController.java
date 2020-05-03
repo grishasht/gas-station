@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.kpi.dziuba.gasstation.model.IFuel;
 import ua.kpi.dziuba.gasstation.model.impl.Fuel;
 import ua.kpi.dziuba.gasstation.repository.IFuelRepository;
+import ua.kpi.dziuba.gasstation.service.IFuelService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,21 +18,17 @@ import java.util.stream.StreamSupport;
 public class FuelController {
     public static final Logger LOGGER = LoggerFactory.getLogger(FuelController.class);
 
-    private final IFuelRepository fuelRepository;
+    private final IFuelService fuelService;
 
     @Autowired
-    public FuelController(IFuelRepository fuelRepository) {
-        this.fuelRepository = fuelRepository;
+    public FuelController(IFuelService fuelService) {
+        this.fuelService = fuelService;
     }
 
     @GetMapping("**/fuels")
     public List<IFuel> getAllFuelList() {
 
-        final Iterable<Fuel> allFuelIterator = fuelRepository.findAll();
-
-        final List<IFuel> allFuelList = StreamSupport.stream(allFuelIterator.spliterator(), false)
-                .map(IFuel.class::cast)
-                .collect(Collectors.toList());
+        final List<IFuel> allFuelList = fuelService.getAllFuels();
 
         LOGGER.info("All fuels retrieved from the database");
 

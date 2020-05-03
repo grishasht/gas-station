@@ -12,7 +12,8 @@ public class Tariff implements ITariff {
     @ManyToOne(
             cascade = CascadeType.ALL
     )
-    private Fuel fuelList;
+    @JoinColumn(name = "id_fuel")
+    private Fuel fuel;
     private Float price;
 
     public Tariff() {
@@ -30,8 +31,7 @@ public class Tariff implements ITariff {
         return price;
     }
 
-    @Override
-    public Fuel getFuelList() {
-        return fuelList;
+    public Fuel getFuel() {
+        return fuel;
     }
 }

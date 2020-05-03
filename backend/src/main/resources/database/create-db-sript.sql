@@ -1,7 +1,7 @@
 CREATE TABLE users
 (
     id            serial primary key,
-    guid          uuid        not null,
+    guid          uuid        not null unique,
     name          varchar(20) not null,
     surname       varchar(20),
     login         varchar(20) not null unique,
@@ -34,6 +34,7 @@ CREATE TABLE refills
 CREATE TABLE templates
 (
     id        serial primary key,
-    id_user   integer references users (id),
-    id_tariff integer references tariffs (id)
+    user_guid uuid not null,
+    id_tariff integer references tariffs (id),
+    name      varchar(20) unique not null
 );

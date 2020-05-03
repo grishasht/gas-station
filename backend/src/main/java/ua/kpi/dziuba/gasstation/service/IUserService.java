@@ -3,8 +3,16 @@ package ua.kpi.dziuba.gasstation.service;
 import org.springframework.stereotype.Component;
 import ua.kpi.dziuba.gasstation.model.IUser;
 
+import java.util.UUID;
+
 @Component
 public interface IUserService {
+
+    IUser createUser(IUser user);
+
+    IUser updateUserByGuid(IUser newUserInfo, UUID userGuid);
+
+    IUser removeUserByGuid(UUID guid);
 
     Boolean validateEmail(String email);
 

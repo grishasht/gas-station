@@ -2,11 +2,16 @@ package ua.kpi.dziuba.gasstation.service.iml;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ua.kpi.dziuba.gasstation.controller.UserController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import ua.kpi.dziuba.gasstation.exception.InvalidUserDataException;
 import ua.kpi.dziuba.gasstation.model.IUser;
+import ua.kpi.dziuba.gasstation.model.impl.User;
+import ua.kpi.dziuba.gasstation.model.impl.builder.UserBuilder;
+import ua.kpi.dziuba.gasstation.repository.IUserRepository;
 import ua.kpi.dziuba.gasstation.service.IUserService;
 
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class UserService implements IUserService {
@@ -19,7 +24,12 @@ public class UserService implements IUserService {
 
     private static final String ERROR_MESSAGE_INVALID_EMAIL = "Entered email is invalid!\n";
     private static final String ERROR_MESSAGE_INVALID_LOGIN = "Entered login is invalid! Must consist of non-whitespace characters and at least 4 chars.\n";
-    private static final String ERROR_MESSAGE_INVALID_PASSWORD = "Entered password is invalid! Must contain at least 1 uppercase, 1 lowercase and 1 digit chars. Minimum length 6 chars.";
+    private static final String ERROR_MESSAGE_INVALID_PASSWORD = "Entered password is invalid! Must contain at least 1 uppercase, 1 lowercase and 1 digit chars. Minimum length 6 chars.\n";
+
+    @Autowired
+    private IUserRepository userRepository;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public Boolean validateEmail(String email) {
@@ -75,5 +85,52 @@ public class UserService implements IUserService {
         }
 
         return true;
+    }
+
+    @Override
+    public IUser createUser(IUser user) {
+
+        final UUID newUserGuid = UUID.randomUUID();
+
+        final User newUser = UserBuilder.newBuilder()
+                .setName(user.getName())
+                .setSurname(user.getSurname())
+                .setEmail(user.getEmail())
+                .setGuid(newUserGuid)
+                .setLogin(user.getLogin())
+                .setPassword(bCryptPasswordEncoder.encode(user.getPassword()))
+                .build();
+
+        userRepository.save(newUser);
+
+        return newUser;
+    }
+
+    @Override
+    public IUser updateUserByGuid(IUser newUserInfo, UUID userGuid) {
+        final Integer userIdByGuid = userRepository.getUserByGuid(userGuid).getId();
+
+        final User newUser = UserBuilder.newBuilder()
+                .setId(userIdByGuid)
+                .setGuid(userGuid)
+                .setName(newUserInfo.getName())
+                .setSurname(newUserInfo.getSurname())
+                .setLogin(newUserInfo.getLogin())
+                .setPassword(bCryptPasswordEncoder.encode(newUserInfo.getPassword()))
+                .setEmail(newUserInfo.getEmail())
+                .build();
+
+        userRepository.save(newUser);
+
+        return newUser;
+    }
+
+    @Override
+    public IUser removeUserByGuid(UUID guid) {
+        final IUser userToBeRemoved = userRepository.getUserByGuid(guid);
+
+        userRepository.removeUserByGuid(guid);
+
+        return userToBeRemoved;
     }
 }

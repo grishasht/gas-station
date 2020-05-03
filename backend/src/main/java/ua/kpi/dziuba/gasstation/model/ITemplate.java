@@ -1,12 +1,15 @@
 package ua.kpi.dziuba.gasstation.model;
 
 import ua.kpi.dziuba.gasstation.model.impl.Tariff;
-import ua.kpi.dziuba.gasstation.model.impl.User;
+
+import java.util.UUID;
 
 public interface ITemplate {
     Integer getId();
 
-    User getUserList();
+    UUID getUserGuid();
 
-    Tariff getTariffList();
+    Tariff getTariff();
+
+    String getName();
 }
