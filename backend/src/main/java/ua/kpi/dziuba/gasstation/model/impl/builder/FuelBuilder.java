@@ -3,8 +3,10 @@ package ua.kpi.dziuba.gasstation.model.impl.builder;
 import ua.kpi.dziuba.gasstation.model.impl.Fuel;
 
 public class FuelBuilder {
+    private Integer id;
     private String type;
     private String name;
+    private Float price;
 
     FuelBuilder(){
 
@@ -20,6 +22,18 @@ public class FuelBuilder {
         return this;
     }
 
+    public FuelBuilder setId(Integer id) {
+        this.id = id;
+
+        return this;
+    }
+
+    public FuelBuilder setPrice(Float price) {
+        this.price = price;
+
+        return this;
+    }
+
     public FuelBuilder setName(String name) {
         this.name = name;
 
@@ -27,6 +41,6 @@ public class FuelBuilder {
     }
 
     public Fuel build(){
-        return new Fuel(type, name);
+        return new Fuel(id, type, name, price);
     }
 }

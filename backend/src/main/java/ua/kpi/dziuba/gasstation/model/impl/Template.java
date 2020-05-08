@@ -14,16 +14,16 @@ public class Template implements ITemplate {
     @OneToOne(
             cascade = CascadeType.ALL
     )
-    private Tariff tariff;
+    private Fuel fuel;
     private String name;
 
     public Template() {
     }
 
-    public Template(Integer id, UUID userGuid, Tariff tariff, String name) {
+    public Template(Integer id, UUID userGuid, Fuel fuel, String name) {
         this.id = id;
         this.userGuid = userGuid;
-        this.tariff = tariff;
+        this.fuel = fuel;
         this.name = name;
     }
 
@@ -38,8 +38,8 @@ public class Template implements ITemplate {
     }
 
     @Override
-    public Tariff getTariff() {
-        return tariff;
+    public Fuel getFuel() {
+        return fuel;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package ua.kpi.dziuba.gasstation.service.iml;
+package ua.kpi.dziuba.gasstation.service.impl;
 
 import ua.kpi.dziuba.gasstation.service.IRefillService;
 

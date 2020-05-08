@@ -53,6 +53,16 @@ public class UserController {
         return responseJson.toString();
     }
 
+    @GetMapping("/{userGuid}/personal")
+    public IUser getAllUserInfo(@PathVariable UUID userGuid) {
+
+        final IUser user = userService.getUserInfo(userGuid);
+
+        LOGGER.info("User {} info successfully retrieved from the database", user.getLogin());
+
+        return user;
+    }
+
     @PutMapping("/{userGuid}/personal")
     public void updateUserInfo(@RequestBody @Valid User newUserInfo, @PathVariable UUID userGuid) {
 
@@ -60,6 +70,8 @@ public class UserController {
 
         LOGGER.info("User {} info successfully updated in the database", newUserInfo.getLogin());
     }
+
+
 
     @DeleteMapping("/{userGuid}/personal")
     public void removeUser(@PathVariable UUID userGuid) {

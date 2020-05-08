@@ -1,9 +1,9 @@
 DROP TABLE templates;
 
-DROP TABLE refills;
+DROP TABLE refills cascade;
 
-DROP TABLE tariffs;
+DROP TABLE pumps cascade;
 
 DROP TABLE users;
 
-DROP TABLE fuels;
+DROP TABLE fuels cascade ;

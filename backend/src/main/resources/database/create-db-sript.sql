@@ -11,30 +11,33 @@ CREATE TABLE users
 
 CREATE TABLE fuels
 (
-    id   serial primary key,
-    type varchar(10) not null,
-    name varchar(10) not null
-);
-
-CREATE TABLE tariffs
-(
     id      serial primary key,
-    id_fuel integer references fuels (id),
-    price   bigint
+    id_pump integer references pumps (id),
+    type    varchar(10) not null,
+    name    varchar(10) not null,
+    price   float       not null
 );
 
 CREATE TABLE refills
 (
     id             serial primary key,
     id_user        integer references users (id),
-    id_tariff      integer references tariffs (id),
+    id_fuel        integer references fuels (id),
     date_submitted timestamp not null
 );
 
 CREATE TABLE templates
 (
     id        serial primary key,
-    user_guid uuid not null,
-    id_tariff integer references tariffs (id),
+    user_guid uuid               not null,
+    id_fuel   integer references fuels (id),
     name      varchar(20) unique not null
+);
+
+CREATE TABLE pumps
+(
+    id           serial primary key,
+    id_local     integer     not null,
+    city         varchar(20) not null,
+    name_station varchar(30) not null
 );

@@ -1,6 +1,6 @@
 package ua.kpi.dziuba.gasstation.model.impl.builder;
 
-import ua.kpi.dziuba.gasstation.model.impl.Tariff;
+import ua.kpi.dziuba.gasstation.model.impl.Fuel;
 import ua.kpi.dziuba.gasstation.model.impl.Template;
 
 import java.util.UUID;
@@ -9,7 +9,7 @@ public class TemplateBuilder {
 
     private Integer id;
     private UUID userGuid;
-    private Tariff tariff;
+    private Fuel fuel;
     private String name;
 
     TemplateBuilder() {
@@ -29,8 +29,8 @@ public class TemplateBuilder {
         return this;
     }
 
-    public TemplateBuilder setTariff(Tariff tariff) {
-        this.tariff = tariff;
+    public TemplateBuilder setFuel(Fuel fuel) {
+        this.fuel = fuel;
         return this;
     }
 
@@ -40,6 +40,6 @@ public class TemplateBuilder {
     }
 
     public Template build(){
-        return new Template(id, userGuid, tariff, name);
+        return new Template(id, userGuid, fuel, name);
     }
 }

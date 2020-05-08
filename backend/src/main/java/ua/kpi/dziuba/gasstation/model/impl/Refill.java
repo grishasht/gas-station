@@ -5,7 +5,8 @@ import ua.kpi.dziuba.gasstation.model.IRefill;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "refills")
+@Entity
+@Table(name = "refills")
 public class Refill implements IRefill {
     @Id
     @GeneratedValue
@@ -17,7 +18,7 @@ public class Refill implements IRefill {
     @OneToMany(
             cascade = CascadeType.ALL
     )
-    private List<Tariff> tariffList;
+    private List<Fuel> fuelList;
 
     public Refill() {
     }
@@ -30,7 +31,7 @@ public class Refill implements IRefill {
         return userList;
     }
 
-    public List<Tariff> getTariffList() {
-        return tariffList;
+    public List<Fuel> getFuelList() {
+        return fuelList;
     }
 }

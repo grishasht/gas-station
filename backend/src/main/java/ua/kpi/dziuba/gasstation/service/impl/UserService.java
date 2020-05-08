@@ -1,4 +1,4 @@
-package ua.kpi.dziuba.gasstation.service.iml;
+package ua.kpi.dziuba.gasstation.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,8 +23,10 @@ public class UserService implements IUserService {
     private final static String PATTERN_PASSWORD = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{6,}$";
 
     private static final String ERROR_MESSAGE_INVALID_EMAIL = "Entered email is invalid!\n";
-    private static final String ERROR_MESSAGE_INVALID_LOGIN = "Entered login is invalid! Must consist of non-whitespace characters and at least 4 chars.\n";
-    private static final String ERROR_MESSAGE_INVALID_PASSWORD = "Entered password is invalid! Must contain at least 1 uppercase, 1 lowercase and 1 digit chars. Minimum length 6 chars.\n";
+    private static final String ERROR_MESSAGE_INVALID_LOGIN = "Entered login is invalid! " +
+            "Must consist of non-whitespace characters and at least 4 chars.\n";
+    private static final String ERROR_MESSAGE_INVALID_PASSWORD = "Entered password is invalid! " +
+            "Must contain at least 1 uppercase, 1 lowercase and 1 digit chars. Minimum length 6 chars.\n";
 
     @Autowired
     private IUserRepository userRepository;
@@ -99,11 +101,18 @@ public class UserService implements IUserService {
                 .setGuid(newUserGuid)
                 .setLogin(user.getLogin())
                 .setPassword(bCryptPasswordEncoder.encode(user.getPassword()))
+                .setCity(user.getCity())
                 .build();
 
         userRepository.save(newUser);
 
         return newUser;
+    }
+
+    @Override
+    public IUser getUserInfo(UUID guid) {
+
+        return userRepository.getUserByGuidNoPassword(guid);
     }
 
     @Override
@@ -118,6 +127,7 @@ public class UserService implements IUserService {
                 .setLogin(newUserInfo.getLogin())
                 .setPassword(bCryptPasswordEncoder.encode(newUserInfo.getPassword()))
                 .setEmail(newUserInfo.getEmail())
+                .setCity(newUserInfo.getCity())
                 .build();
 
         userRepository.save(newUser);

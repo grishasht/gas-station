@@ -1,14 +1,19 @@
 package ua.kpi.dziuba.gasstation.model;
 
 import ua.kpi.dziuba.gasstation.model.impl.Fuel;
-import ua.kpi.dziuba.gasstation.model.impl.User;
 
 import java.util.List;
 
-public interface IRefill {
+public interface IPump {
+
     Integer getId();
 
-    List<User> getUserList();
+    Integer getIdLocal();
 
     List<Fuel> getFuelList();
+
+    String getCity();
+
+    String getNameStation();
+
 }

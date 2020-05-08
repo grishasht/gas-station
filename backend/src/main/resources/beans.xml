@@ -8,8 +8,8 @@
 <!--    <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">-->
 <!--    </bean>-->
 
-    <bean id="userService" class="ua.kpi.dziuba.gasstation.service.IUserService">
-    </bean>
+<!--    <bean id="userService" class="ua.kpi.dziuba.gasstation.service.impl.UserService">-->
+<!--    </bean>-->
 
 
 </beans>

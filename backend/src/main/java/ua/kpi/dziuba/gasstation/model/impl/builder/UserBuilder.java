@@ -12,6 +12,7 @@ public class UserBuilder {
     private String login;
     private String password;
     private String email;
+    private String city;
 
     UserBuilder(){
 
@@ -61,7 +62,12 @@ public class UserBuilder {
         return this;
     }
 
+    public UserBuilder setCity(String city) {
+        this.city = city;
+        return this;
+    }
+
     public User build(){
-        return new User(id, guid, name, surname, login, password, email);
+        return new User(id, guid, name, surname, login, password, email, city);
     }
 }

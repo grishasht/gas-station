@@ -6,4 +6,6 @@ public interface IFuel {
     String getType();
 
     String getName();
+
+    Float getPrice();
 }

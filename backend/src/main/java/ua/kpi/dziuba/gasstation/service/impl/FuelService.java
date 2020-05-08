@@ -1,4 +1,4 @@
-package ua.kpi.dziuba.gasstation.service.iml;
+package ua.kpi.dziuba.gasstation.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ua.kpi.dziuba.gasstation.model.IFuel;

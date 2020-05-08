@@ -13,24 +13,35 @@ public class Fuel implements IFuel {
     private Integer id;
     private String type;
     private String name;
+    private Float price;
 
-    public Fuel(String type, String name) {
+    public Fuel(Integer id, String type, String name, Float price) {
+        this.id = id;
         this.type = type;
         this.name = name;
+        this.price = price;
     }
 
     public Fuel() {
     }
 
+    @Override
     public Integer getId() {
         return id;
     }
 
+    @Override
     public String getType() {
         return type;
     }
 
+    @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public Float getPrice() {
+        return price;
     }
 }

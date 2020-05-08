@@ -1,12 +1,10 @@
-package ua.kpi.dziuba.gasstation.service.iml;
+package ua.kpi.dziuba.gasstation.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ua.kpi.dziuba.gasstation.model.ITemplate;
-import ua.kpi.dziuba.gasstation.model.IUser;
 import ua.kpi.dziuba.gasstation.model.impl.Template;
 import ua.kpi.dziuba.gasstation.model.impl.builder.TemplateBuilder;
 import ua.kpi.dziuba.gasstation.repository.ITemplateRepository;
-import ua.kpi.dziuba.gasstation.repository.IUserRepository;
 import ua.kpi.dziuba.gasstation.service.ITemplateService;
 
 import java.util.List;
@@ -41,7 +39,7 @@ public class TemplateService implements ITemplateService {
 
         final ITemplate newTemplate = TemplateBuilder.newBuilder()
                 .setId(templateByName.getId())
-                .setTariff(newTemplateInfo.getTariff())
+                .setFuel(newTemplateInfo.getFuel())
                 .build();
 
         return templateRepository.save((Template) newTemplate);

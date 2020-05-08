@@ -1,6 +1,6 @@
 package ua.kpi.dziuba.gasstation.model;
 
-import ua.kpi.dziuba.gasstation.model.impl.Tariff;
+import ua.kpi.dziuba.gasstation.model.impl.Fuel;
 
 import java.util.UUID;
 
@@ -9,7 +9,7 @@ public interface ITemplate {
 
     UUID getUserGuid();
 
-    Tariff getTariff();
+    Fuel getFuel();
 
     String getName();
 }

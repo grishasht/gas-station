@@ -16,4 +16,6 @@ public interface IUser {
     String getPassword();
 
     String getEmail();
+
+    String getCity();
 }
