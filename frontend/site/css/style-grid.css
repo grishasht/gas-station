@@ -78,10 +78,16 @@ body {
 }
 
 #buy-fuel {
-    margin: 15% auto;
-    width: 30%;
+    margin: 10% auto;
+    width: 60%;
     font-size: larger;
 }
+
+#fuel-price, #your-fuel-price{
+    color: red;
+    font-weight: bolder;
+}
+
 
 
 

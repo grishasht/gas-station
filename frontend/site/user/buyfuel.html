@@ -75,27 +75,39 @@
 <div id="mainside">
     <div id="buy-fuel">
         <p></p>
+        Вкажіть своє місцезнаходження:
+        <select class="form-control" id="city"></select>
+        <p></p>
+        Виберіть бажану АЗС:
+        <select class="form-control" id="azs"></select>
+        <p></p>
         Оберіть тип пального:
-        <select class="form-control">
-            <option>Газ</option>
-            <option>Бензин</option>
-            <option>Дизель</option>
-        </select>
+        <select class="form-control" id="fuel-type" onchange="changeName()"></select>
         <p></p>
-        Оберіть бажаний тариф:
-        <select class="form-control">
-            <option>Сімейний</option>
-            <option>Економ</option>
-            <option>Бізнес</option>
-            <option>Опт</option>
-        </select>
+        Оберіть бажаний <span id="fuel-value"></span> тип:
+        <select class="form-control" id="fuel-name" onchange="changePrice()"></select>
         <p></p>
-        <div class="form-group">
-            <label for="size">Вкажіть потрібний об'єм:</label>
-            <input type="text" class="form-control" id="size" placeholder="Портібна кількість літрів">
+        <div style=" text-align: center; text-decoration: underline">Ціна за 1л вибраного пального - <span id="fuel-price"></span> грн.</div>
+        <p></p>
+        <div class="form-row">
+            <div class="form-group col-md-6" id="buyforsize">
+                <button type="button" onclick="buyFuelbySize()" class="btn btn-primary " style="width: 100%">Придбати
+                    пальне за об'ємом
+                </button>
+            </div>
+            <div class="form-group col-md-6" id="buyforprice">
+                <button type="button" onclick="buyFuelbyPrice()" class="btn btn-info" style="width: 100%">Придбати
+                    пальне за ціною
+                </button>
+            </div>
         </div>
-        <a href="http://localhost:8080/user/buy-price" class="btn btn-primary active" role="button" aria-pressed="true" >Ціна за вказаними опціями</a>
+        <div id="button-count"></div>
+        <p></p>
+        <div id="end-your-fuel-price"></div>
+        <p></p>
+        <div id="submit"></div>
     </div>
+</div>
 </div>
 
 <footer id="botside">
@@ -104,4 +116,8 @@
 </footer>
 
 </body>
+
+<script type="text/javascript" src="../../resourses/fuels.json"></script>
+<script type="text/javascript" src="../../resourses/parsing.js"></script>
+
 </html>
