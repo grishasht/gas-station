@@ -16,4 +16,6 @@ public interface ITemplateService {
     ITemplate updateTemplate(ITemplate newTemplateInfo);
 
     void removeTemplateById(Integer id, UUID userGuid);
+
+    ITemplate getAllTemplatesByName(UUID userGuid, String templateName);
 }

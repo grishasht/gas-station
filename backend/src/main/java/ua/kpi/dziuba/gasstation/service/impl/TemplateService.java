@@ -9,8 +9,6 @@ import ua.kpi.dziuba.gasstation.service.ITemplateService;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class TemplateService implements ITemplateService {
 
@@ -20,10 +18,13 @@ public class TemplateService implements ITemplateService {
     @Override
     public List<ITemplate> getAllTemplatesByUserGuid(UUID userGuid) {
 
-        final Iterable<Template> templateIterable = templateRepository.findAll();
+        return templateRepository.findAllByUserGuid(userGuid);
+    }
 
-        return StreamSupport.stream(templateIterable.spliterator(), false)
-                .collect(Collectors.toList());
+    @Override
+    public ITemplate getAllTemplatesByName(UUID userGuid, String templateName) {
+
+        return templateRepository.findByUserGuidAndName(userGuid, templateName);
     }
 
     @Override

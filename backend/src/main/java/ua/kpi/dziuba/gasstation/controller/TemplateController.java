@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ua.kpi.dziuba.gasstation.model.ITemplate;
 import ua.kpi.dziuba.gasstation.service.ITemplateService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -23,11 +24,22 @@ public class TemplateController {
     }
 
     @GetMapping("/templates")
-    public List<ITemplate> getAllUserTemplates(@PathVariable UUID userGuid) {
+    public List<ITemplate> getAllUserTemplates(@PathVariable @Valid UUID userGuid) {
 
         final List<ITemplate> templateList = templateService.getAllTemplatesByUserGuid(userGuid);
 
-        LOGGER.info("All templates retrieved successfully!");
+        LOGGER.info("All templates retrieved for user {} successfully!", userGuid);
+
+        return templateList;
+
+    }
+
+    @GetMapping("/template")
+    public ITemplate getAllUserTemplatesByName(@PathVariable @Valid UUID userGuid, @RequestParam String templateName) {
+
+        final ITemplate templateList = templateService.getAllTemplatesByName(userGuid, templateName);
+
+        LOGGER.info("Template by name {} retrieved for user {} successfully!", templateName, userGuid);
 
         return templateList;
 
@@ -51,7 +63,7 @@ public class TemplateController {
     }
 
     @DeleteMapping("/templates/{templateId}")
-    public void removeTemplateById(@PathVariable UUID userGuid, @PathVariable Integer templateId) {
+    public void removeTemplateById(@PathVariable @Valid UUID userGuid, @PathVariable Integer templateId) {
 
         templateService.removeTemplateById(templateId, userGuid);
 

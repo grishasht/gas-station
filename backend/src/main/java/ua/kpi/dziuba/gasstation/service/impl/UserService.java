@@ -116,6 +116,11 @@ public class UserService implements IUserService {
     }
 
     @Override
+    public IUser getUserByLogin(String login) {
+        return userRepository.getUserByLogin(login);
+    }
+
+    @Override
     public IUser updateUserByGuid(IUser newUserInfo, UUID userGuid) {
         final Integer userIdByGuid = userRepository.getUserByGuid(userGuid).getId();
 

@@ -3,7 +3,7 @@ package ua.kpi.dziuba.gasstation.model.impl;
 import ua.kpi.dziuba.gasstation.model.IRefill;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "refills")
@@ -11,27 +11,47 @@ public class Refill implements IRefill {
     @Id
     @GeneratedValue
     private Integer id;
-    @OneToMany(
+    private UUID userGuid;
+    @OneToOne(
             cascade = CascadeType.ALL
     )
-    private List<User> userList;
-    @OneToMany(
-            cascade = CascadeType.ALL
-    )
-    private List<Fuel> fuelList;
+    private Fuel fuel;
+    private Float volume;
+    private Float finalPrice;
 
     public Refill() {
     }
 
+    public Refill(Integer id, UUID userGuid, Fuel fuel, Float volume, Float finalPrice) {
+        this.id = id;
+        this.userGuid = userGuid;
+        this.fuel = fuel;
+        this.volume = volume;
+        this.finalPrice = finalPrice;
+    }
+
+    @Override
     public Integer getId() {
         return id;
     }
 
-    public List<User> getUserList() {
-        return userList;
+    @Override
+    public UUID getUserGuid() {
+        return userGuid;
     }
 
-    public List<Fuel> getFuelList() {
-        return fuelList;
+    @Override
+    public Fuel getFuel() {
+        return fuel;
+    }
+
+    @Override
+    public Float getVolume() {
+        return volume;
+    }
+
+    @Override
+    public Float getFinalPrice() {
+        return finalPrice;
     }
 }

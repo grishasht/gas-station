@@ -13,6 +13,8 @@ public interface IUserService {
 
     IUser getUserInfo(UUID guid);
 
+    IUser getUserByLogin(String login);
+
     IUser updateUserByGuid(IUser newUserInfo, UUID userGuid);
 
     IUser removeUserByGuid(UUID guid);

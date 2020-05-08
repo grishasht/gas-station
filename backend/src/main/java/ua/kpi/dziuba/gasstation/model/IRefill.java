@@ -1,14 +1,17 @@
 package ua.kpi.dziuba.gasstation.model;
 
 import ua.kpi.dziuba.gasstation.model.impl.Fuel;
-import ua.kpi.dziuba.gasstation.model.impl.User;
 
-import java.util.List;
+import java.util.UUID;
 
 public interface IRefill {
     Integer getId();
 
-    List<User> getUserList();
+    UUID getUserGuid();
 
-    List<Fuel> getFuelList();
+    Fuel getFuel();
+
+    Float getVolume();
+
+    Float getFinalPrice();
 }

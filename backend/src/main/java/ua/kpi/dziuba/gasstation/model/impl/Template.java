@@ -14,6 +14,7 @@ public class Template implements ITemplate {
     @OneToOne(
             cascade = CascadeType.ALL
     )
+    @JoinColumn(name = "id_fuel")
     private Fuel fuel;
     private String name;
 

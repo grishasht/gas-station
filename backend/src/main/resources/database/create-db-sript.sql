@@ -21,17 +21,19 @@ CREATE TABLE fuels
 CREATE TABLE refills
 (
     id             serial primary key,
-    id_user        integer references users (id),
+    user_guid      uuid      not null,
     id_fuel        integer references fuels (id),
-    date_submitted timestamp not null
+    date_submitted timestamp not null,
+    volume         float     not null,
+    final_price    float     not null
 );
 
 CREATE TABLE templates
 (
     id        serial primary key,
-    user_guid uuid               not null,
+    user_guid uuid        not null,
     id_fuel   integer references fuels (id),
-    name      varchar(20) unique not null
+    name      varchar(20) not null
 );
 
 CREATE TABLE pumps

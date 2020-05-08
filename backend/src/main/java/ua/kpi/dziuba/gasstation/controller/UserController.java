@@ -46,11 +46,20 @@ public class UserController {
 
         LOGGER.info("User {} info successfully created!", newUser.getLogin());
 
-        final JSONObject responseJson = new JSONObject();
-
-        responseJson.put(RESPONSE_FIELD_GUID, newUser.getGuid().toString());
+        final JSONObject responseJson = getGuidJson(newUser);
 
         return responseJson.toString();
+    }
+
+    @GetMapping("/login")
+    public String userLogin(@RequestBody User user){
+
+        final String userLogin = user.getLogin();
+        final IUser userByLogin = userService.getUserByLogin(userLogin);
+
+        LOGGER.info("User {} guild retrieved!", userLogin);
+
+        return getGuidJson(userByLogin).toString();
     }
 
     @GetMapping("/{userGuid}/personal")
@@ -82,4 +91,10 @@ public class UserController {
 
     }
 
+    private JSONObject getGuidJson(IUser user) {
+        final JSONObject responseJson = new JSONObject();
+
+        responseJson.put(RESPONSE_FIELD_GUID, user.getGuid().toString());
+        return responseJson;
+    }
 }

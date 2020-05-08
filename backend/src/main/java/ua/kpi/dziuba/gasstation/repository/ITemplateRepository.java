@@ -16,4 +16,6 @@ public interface ITemplateRepository extends CrudRepository<Template, Integer> {
     ITemplate findByName(String name);
 
     void removeByIdAndUserGuid(Integer id, UUID userGuid);
+
+    ITemplate findByUserGuidAndName(UUID userGuid, String name);
 }
