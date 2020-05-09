@@ -17,6 +17,8 @@ target/
 *.ipr
 
 ### My ###
+frontend/node_modules
+frontend/package*.json
 backend/mvnw
 backend/mvnw.cmd
 HELP.md

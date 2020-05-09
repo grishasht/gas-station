@@ -75,11 +75,14 @@
 <div id="mainside">
     <div id="buy-fuel">
         <p></p>
-        Вкажіть своє місцезнаходження:
-        <select class="form-control" id="city"></select>
+        Вкажіть місто заправки:
+        <select class="form-control" id="city" onchange="changeCity()"></select>
         <p></p>
         Виберіть бажану АЗС:
-        <select class="form-control" id="azs"></select>
+        <select class="form-control" id="azs" onchange="changeAzs()"></select>
+        <p></p>
+        Виберіть потрібний номер колонки:
+        <select class="form-control" id="number" onchange="changeNumber()"></select>
         <p></p>
         Оберіть тип пального:
         <select class="form-control" id="fuel-type" onchange="changeName()"></select>
