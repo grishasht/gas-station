@@ -3,6 +3,7 @@ package ua.kpi.dziuba.gasstation.model.impl;
 import ua.kpi.dziuba.gasstation.model.IRefill;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Entity
@@ -15,19 +16,26 @@ public class Refill implements IRefill {
     @OneToOne(
             cascade = CascadeType.ALL
     )
+    @JoinColumn(name = "id_fuel")
     private Fuel fuel;
+    private Timestamp dateSubmitted;
     private Float volume;
     private Float finalPrice;
+    private String city;
+    private String nameStation;
 
     public Refill() {
     }
 
-    public Refill(Integer id, UUID userGuid, Fuel fuel, Float volume, Float finalPrice) {
+    public Refill(Integer id, UUID userGuid, Fuel fuel, Timestamp dateSubmitted, Float volume, Float finalPrice, String city, String nameStation) {
         this.id = id;
         this.userGuid = userGuid;
         this.fuel = fuel;
+        this.dateSubmitted = dateSubmitted;
         this.volume = volume;
         this.finalPrice = finalPrice;
+        this.city = city;
+        this.nameStation = nameStation;
     }
 
     @Override
@@ -53,5 +61,20 @@ public class Refill implements IRefill {
     @Override
     public Float getFinalPrice() {
         return finalPrice;
+    }
+
+    @Override
+    public Timestamp getDateSubmitted() {
+        return dateSubmitted;
+    }
+
+    @Override
+    public String getCity() {
+        return city;
+    }
+
+    @Override
+    public String getNameStation() {
+        return nameStation;
     }
 }

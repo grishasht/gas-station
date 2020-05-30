@@ -3,8 +3,8 @@ package ua.kpi.dziuba.gasstation.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ua.kpi.dziuba.gasstation.model.IPump;
@@ -26,7 +26,39 @@ public class PumpController {
         this.pumpService = pumpService;
     }
 
-    @RequestMapping("{userGuid}/pumps")
+
+    /**
+     * Метод, що повертає всі колонки із пальним із бази даних по вказаному в адресному рядку шляху
+     * (в дужках нижче), ННТР - методу GET та вказаних параметрах-фільтрах.
+     *
+     * Даний контроллер отримує запит від клієнта та, викликаючи сервіс
+     * {@link IPumpService}, обробляє його. Даний сервіс повертає отримані та оброблені
+     * дані колонок пального із бази даних.
+     *
+     * Приклади використання контроллеру.
+     *      Можна використовувати як тільки один із параметрів у адресному рядку, на приклад:
+     *      https://gas-station/"some guid"/pumps?city=Kyiv
+     *              або
+     *      https://gas-station/"some guid"/pumps?station=Boryspil%20AZS
+     *
+     *      так і одразу оба параметри, на приклад:
+     *      https://gas-station/"some guid"/pumps?city=Kyiv&station=Boryspil%20AZS
+     *
+     *      так і без параметрів, на приклад:
+     *      https://gas-station/"some guid"/pumps
+     *             - у такому випадку із бази даних витягнуться всі колонки із пальним, та
+     *              передадуться клієнту через даний контроллер.
+     *
+     * @param userGuid - параметр шляху адресного рядку. унікальний ідентифікатор користувача,
+     *                  завдяки якому здійснюється доступ до ресурсів сервера. Обов'язковий
+     *                 параметр.
+     * @param city - необов'язковий параметр. Фільтр, по якому дістаються колонки із пальним із
+     *             бази даних.
+     * @param station - - необов'язковий параметр. Фільтр, по якому дістаються колонки із пальним із
+     *             бази даних.
+     * @return джейсон у вигляді масиву сутностей колонок із пальним.
+     */
+    @GetMapping("{userGuid}/pumps")
     public List<IPump> getAllPumpsByCityAndStation(@PathVariable @Valid UUID userGuid,
                                                    @RequestParam(required = false) String city,
                                                    @RequestParam(required = false) String station) {

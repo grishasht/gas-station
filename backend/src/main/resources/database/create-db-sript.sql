@@ -6,7 +6,16 @@ CREATE TABLE users
     surname       varchar(20),
     login         varchar(20) not null unique,
     password_hash text        not null,
-    email         varchar(40) not null
+    email         varchar(40) not null,
+    city          varchar(20)
+);
+
+CREATE TABLE pumps
+(
+    id           serial primary key,
+    id_local     integer     not null,
+    city         varchar(20) not null,
+    name_station varchar(30) not null
 );
 
 CREATE TABLE fuels
@@ -21,11 +30,13 @@ CREATE TABLE fuels
 CREATE TABLE refills
 (
     id             serial primary key,
-    user_guid      uuid      not null,
+    user_guid      uuid        not null,
     id_fuel        integer references fuels (id),
-    date_submitted timestamp not null,
-    volume         float     not null,
-    final_price    float     not null
+    city           varchar(20) not null,
+    name_station   varchar(20) not null,
+    date_submitted timestamp   not null,
+    volume         float       not null,
+    final_price    float       not null
 );
 
 CREATE TABLE templates
@@ -34,12 +45,4 @@ CREATE TABLE templates
     user_guid uuid        not null,
     id_fuel   integer references fuels (id),
     name      varchar(20) not null
-);
-
-CREATE TABLE pumps
-(
-    id           serial primary key,
-    id_local     integer     not null,
-    city         varchar(20) not null,
-    name_station varchar(30) not null
 );

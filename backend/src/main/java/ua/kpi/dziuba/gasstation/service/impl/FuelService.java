@@ -1,6 +1,8 @@
 package ua.kpi.dziuba.gasstation.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 import ua.kpi.dziuba.gasstation.model.IFuel;
 import ua.kpi.dziuba.gasstation.model.impl.Fuel;
 import ua.kpi.dziuba.gasstation.repository.IFuelRepository;

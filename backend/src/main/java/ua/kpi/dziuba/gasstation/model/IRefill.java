@@ -2,6 +2,7 @@ package ua.kpi.dziuba.gasstation.model;
 
 import ua.kpi.dziuba.gasstation.model.impl.Fuel;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
 public interface IRefill {
@@ -14,4 +15,10 @@ public interface IRefill {
     Float getVolume();
 
     Float getFinalPrice();
+
+    Timestamp getDateSubmitted();
+
+    String getCity();
+
+    String getNameStation();
 }

@@ -33,18 +33,15 @@ public class UserService implements IUserService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Override
-    public Boolean validateEmail(String email) {
+    private Boolean validateEmail(String email) {
         return Pattern.matches(PATTERN_EMAIL, email);
     }
 
-    @Override
-    public Boolean validateLogin(String login) {
+    private Boolean validateLogin(String login) {
         return Pattern.matches(PATTERN_LOGIN, login);
     }
 
-    @Override
-    public Boolean validatePassword(String password) {
+    private Boolean validatePassword(String password) {
         return Pattern.matches(PATTERN_PASSWORD, password);
     }
 

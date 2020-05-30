@@ -6,13 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ua.kpi.dziuba.gasstation.model.IFuel;
-import ua.kpi.dziuba.gasstation.model.impl.Fuel;
-import ua.kpi.dziuba.gasstation.repository.IFuelRepository;
 import ua.kpi.dziuba.gasstation.service.IFuelService;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @RestController
 public class FuelController {
@@ -25,6 +21,22 @@ public class FuelController {
         this.fuelService = fuelService;
     }
 
+    /**
+     * Метод, що повертає все пальне із бази даних по вказаному в адресному рядку шляху
+     * (в дужках нижче) та ННТР - методу GET.
+     *
+     * Даний контроллер отримує запит від клієнта та, викликаючи сервіс
+     * {@link IFuelService}, обробляє його. Даний сервіс повертає отримані та оброблені
+     * дані із бази даних.
+     *
+     * Приклади використання контроллеру.
+     *      https://gas-station/"some guid"/fuels
+     *      , або
+     *      https://gas-station/guest/fuels
+     *      , або будь-яке інше посилання. Головне, щою воно закінчувалося на /fuels
+     *
+     * @return джейсон у вигляді масиву сутностей пального.
+     */
     @GetMapping("**/fuels")
     public List<IFuel> getAllFuelList() {
 

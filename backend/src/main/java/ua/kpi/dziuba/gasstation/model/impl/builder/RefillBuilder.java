@@ -3,6 +3,7 @@ package ua.kpi.dziuba.gasstation.model.impl.builder;
 import ua.kpi.dziuba.gasstation.model.impl.Fuel;
 import ua.kpi.dziuba.gasstation.model.impl.Refill;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
 public class RefillBuilder {
@@ -11,6 +12,9 @@ public class RefillBuilder {
     private Fuel fuel;
     private Float volume;
     private Float finalPrice;
+    private Timestamp dateSubmitted;
+    private String city;
+    private String nameStation;
 
     RefillBuilder() {
     }
@@ -49,7 +53,22 @@ public class RefillBuilder {
         return this;
     }
 
+    public RefillBuilder setDateSubmitted(Timestamp dateSubmitted) {
+        this.dateSubmitted = dateSubmitted;
+        return this;
+    }
+
+    public RefillBuilder setCity(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public RefillBuilder setNameStation(String nameStation) {
+        this.nameStation = nameStation;
+        return this;
+    }
+
     public Refill build(){
-        return new Refill(id, userGuid, fuel, volume, finalPrice);
+        return new Refill(id, userGuid, fuel, dateSubmitted, volume, finalPrice, city, nameStation);
     }
 }

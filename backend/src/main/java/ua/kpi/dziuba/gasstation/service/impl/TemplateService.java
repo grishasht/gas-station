@@ -22,7 +22,7 @@ public class TemplateService implements ITemplateService {
     }
 
     @Override
-    public ITemplate getAllTemplatesByName(UUID userGuid, String templateName) {
+    public List<ITemplate> getAllTemplatesByName(UUID userGuid, String templateName) {
 
         return templateRepository.findByUserGuidAndName(userGuid, templateName);
     }
