@@ -403,8 +403,6 @@ function init() {
 
         pumpHashTable[city][station][newIdLocal] = initFuels(element);
     });
-
-    changeName();
 }
 
 function initFuels(pump) {
@@ -467,6 +465,7 @@ function parseData() {
 function changeCity() {
 
     cleanElement([AZS, NUMBER, FUEL_TYPE, FUEL_NAME]);
+    cleanObject();
 
     const dropdownValuesHashTable = getDropdownValuesHashTable([CITY]);
 
@@ -484,6 +483,7 @@ function changeCity() {
 function changeAzs() {
 
     cleanElement([NUMBER, FUEL_TYPE, FUEL_NAME]);
+    cleanObject();
 
     const dropdownValuesHashTable = getDropdownValuesHashTable([CITY, AZS]);
 
@@ -502,6 +502,7 @@ function changeAzs() {
 function changeNumber() {
 
     cleanElement([FUEL_TYPE, FUEL_NAME]);
+    cleanObject();
 
     const dropdownValuesHashTable = getDropdownValuesHashTable([CITY, AZS, NUMBER]);
 
@@ -522,6 +523,7 @@ function changeNumber() {
 function changeName() {
 
     cleanElement([FUEL_NAME]);
+    cleanObject();
 
     const dropdownValuesHashTable = getDropdownValuesHashTable([CITY, AZS, NUMBER, FUEL_TYPE]);
 
@@ -530,13 +532,15 @@ function changeName() {
     const number = dropdownValuesHashTable[NUMBER];
     const type = dropdownValuesHashTable[FUEL_TYPE];
 
+    document.getElementById("fuel-value").innerHTML = type;
+
     const fuelTypeSelect = document.getElementById(FUEL_NAME);
 
     pumpHashTable[city][station][number][type].forEach(key => {
         createNewTag("option", key.name, fuelTypeSelect);
     })
 
-    changePrice()
+    changePrice();
 }
 
 function changePrice() {
@@ -551,8 +555,8 @@ function changePrice() {
 
     const typeList = pumpHashTable[city][station][number][type];
     typeList.forEach(key => {
-        if(key.name === name ){
-             document.getElementById(FUEL_PRICE).innerHTML = key.price;
+        if (key.name === name) {
+            document.getElementById(FUEL_PRICE).innerHTML = key.price;
         }
     });
 
@@ -649,4 +653,18 @@ function cleanElement(needClearArr) {
             cleanFuelPrize.innerHTML = '<div> </div>';
         }
     );
+}
+
+const data = {
+    "id": 2,
+    "userGuid": "ed19d725-f912-48df-a461-baad02f0b1c4",
+    "fuel": {
+        "id": 2,
+        "type": "Diesel",
+        "name": "ECO",
+        "price": 1.23
+    },
+    "dateSubmitted": "2016-06-22T16:10:25.000+0000",
+    "volume": 25.0,
+    "finalPrice": 40.0
 }
