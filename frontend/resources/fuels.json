@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "type": "Diesel",
+        "name": "EURO",
+        "price": 1.12
+    },
+    {
+        "id": 2,
+        "type": "Diesel",
+        "name": "ECO",
+        "price": 1.23
+    },
+    {
+        "id": 3,
+        "type": "Diesel",
+        "name": "ULTRA",
+        "price": 1.3
+    },
+    {
+        "id": 4,
+        "type": "Gas",
+        "name": "GazProm",
+        "price": 5.4
+    },
+    {
+        "id": 5,
+        "type": "Gas",
+        "name": "PropanTM",
+        "price": 5.8
+    },
+    {
+        "id": 6,
+        "type": "Gas",
+        "name": "Ukr",
+        "price": 6.1
+    },
+    {
+        "id": 7,
+        "type": "Petrol",
+        "name": "A-100",
+        "price": 1.35
+    },
+    {
+        "id": 8,
+        "type": "Petrol",
+        "name": "A-98",
+        "price": 1.29
+    },
+    {
+        "id": 9,
+        "type": "Petrol",
+        "name": "A-95",
+        "price": 1.2
+    },
+    {
+        "id": 10,
+        "type": "Petrol",
+        "name": "A-92",
+        "price": 1.15
+    },
+    {
+        "id": 11,
+        "type": "Petrol",
+        "name": "A-88",
+        "price": 1.11
+    }
+]
