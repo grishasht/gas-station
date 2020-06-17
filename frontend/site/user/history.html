@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 
-    <title>Особистий кабінет</title>
+    <link rel="stylesheet" type="text/css" href="../css/style-grid.css"/>
+    <title>Історія заправок</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,10 +22,6 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
 
-    <!--    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>-->
-    <!--    <script src="bootstrap/js/popper.js"></script>-->
-    <!--    <script src="site/css/style-grid.css"></script>-->
-
 </head>
 
 
@@ -33,8 +30,8 @@
 <header id="topside">
     <nav class="navbar navbar-expand-lg navbar-light  bg-light">
         <a class="navbar-brand" href="http://localhost:8080/user">
-            <img src="../../image/logo.jpg" width="32" height="32" class="d-inline-block align-top" alt="">
-            На головну
+            <img src="../../image/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            АЗС
         </a>
         <button class="navbar-toggler bg-light" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent"
@@ -72,29 +69,48 @@
 </header>
 
 <div id="mainside">
-    <div id="buy-fuel">
-        <p></p>
-        Оберіть тип пального:
-        <select class="form-control">
-            <option>Газ</option>
-            <option>Бензин</option>
-            <option>Дизель</option>
-        </select>
-        <p></p>
-        Оберіть бажаний тариф:
-        <select class="form-control">
-            <option>Сімейний</option>
-            <option>Економ</option>
-            <option>Бізнес</option>
-            <option>Опт</option>
-        </select>
-        <p></p>
-        <div class="form-group">
-            <label for="size">Вкажіть потрібний об'єм:</label>
-            <input type="text" class="form-control" id="size" placeholder="Портібна кількість літрів">
-        </div>
-        <p>Вартість пального: ххх грн.</p>
-        <a href="http://localhost:8080/user/buy-info" class="btn btn-primary active" role="button" aria-pressed="true" >Підвердити покупку</a>
+    <div class="history">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Пальне</th>
+                <th scope="col">Сума</th>
+                <th scope="col">АЗС</th>
+                <th scope="col">Дата</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">13</th>
+                <td>Diesel, ECO, 60 л</td>
+                <td>73.65</td>
+                <td>Бориспільська АЗС, Київ</td>
+                <td>04.06.2020</td>
+            </tr>
+            <tr>
+                <th scope="row">14</th>
+                <td>Diesel, EURO, 35 л</td>
+                <td>41.34</td>
+                <td>Перемоги АЗС, Київ</td>
+                <td>13.06.2020</td>
+            </tr>
+            <tr>
+                <th scope="row">15</th>
+                <td>Petrol, A-95, 10 л</td>
+                <td>13.60</td>
+                <td>Перемоги АЗС, Київ</td>
+                <td>15.06.2020</td>
+            </tr>
+            <tr>
+                <th scope="row">16</th>
+                <td>Petrol, A-95, 10 л</td>
+                <td>13.60</td>
+                <td>Бориспільська АЗС, Київ</td>
+                <td>17.06.2020</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 

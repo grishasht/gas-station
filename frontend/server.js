@@ -73,6 +73,9 @@ app.get('/user/buy-info', (req, res) => {
     readHtmlFile(req, res, 'site/user/buy-info.html');
 });
 
+app.get('/user/history', (req, res) => {
+    readHtmlFile(req, res, 'site/user/history.html');
+});
 
 console.log('Listening at: localhost:8080');
 

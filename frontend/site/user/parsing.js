@@ -514,7 +514,7 @@ function changeNumber() {
 
     Object.keys(pumpHashTable[city][station][number]).forEach(key => {
         createNewTag("option", key, fuelTypeSelect);
-    })
+    });
 
     changeName()
 }
