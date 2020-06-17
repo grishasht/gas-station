@@ -88,6 +88,20 @@ body {
     font-weight: bolder;
 }
 
+#template{
+    margin-top: 5%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: larger;
+    border-style: double;
+}
+
+#text{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 
 .history {
     margin-top: 10%;

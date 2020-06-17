@@ -62,8 +62,8 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="http://localhost:8080/user/personal">Профіль</a>
-                    <a class="dropdown-item" href="http://localhost:8080/user/buy-fuel">Придбати пальне</a>
                     <a class="dropdown-item" href="http://localhost:8080/user/history">Історія заправлень</a>
+                    <a class="dropdown-item" href="http://localhost:8080/user/template">Шаблони</a>
                     <a class="dropdown-item" href="http://localhost:8080/main-page">Вихід</a>
                 </div>
             </div>
@@ -74,6 +74,15 @@
 
 <div id="mainside">
     <div id="buy-fuel">
+        <p></p>
+        Застосувати шаблон:
+        <select class="form-control form-control">
+            <option>Стандартний: Diesel, EURO, 1.12</option>
+            <option>Середній:  Diesel, ECO, 1.36</option>
+            <option>Мінімальний: Petrol, A-95, 1.10</option>
+            <option>Економний: Gas, ECO, 0.86</option>
+            <option>Максимальний: Diesel, EURO, 1.92</option>
+        </select>
         <p></p>
         Вкажіть місто заправки:
         <select class="form-control" id="city" onchange="changeCity()"></select>
@@ -121,6 +130,6 @@
 </body>
 
 <script type="text/javascript" src="../../resourses/fuels.json"></script>
-<script type="text/javascript" src="../../resourses/parsing.js"></script>
+<script type="text/javascript" src="../../user/parsing.js"></script>
 
 </html>

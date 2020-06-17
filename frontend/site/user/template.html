@@ -64,7 +64,6 @@
                     <a class="dropdown-item" href="http://localhost:8080/user/personal">Профіль</a>
                     <a class="dropdown-item" href="http://localhost:8080/user/buy-fuel">Придбати пальне</a>
                     <a class="dropdown-item" href="http://localhost:8080/user/history">Історія заправлень</a>
-                    <a class="dropdown-item" href="http://localhost:8080/user/template">Шаблони</a>
                     <a class="dropdown-item" href="http://localhost:8080/main-page">Вихід</a>
                 </div>
             </div>
@@ -74,42 +73,74 @@
 
 
 <div id="mainside">
-    <p></p>
-    <p><a href="#" class="text-dark" style="float: right; margin-right: 20px">Історія заправок</a></p>
+    <div id="template">
+        <div id="text">
+            <p></p>
+            <h3><u>Наявні шаблони:</u></h3>
+            <p></p>
+            <div>
+                <p>
 
-    <form id="info">
-        <img src="../image/user.jpg" alt="" id="personalphoto">
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Завантажити фото</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Ім'я</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="name" value="admin">
+                    <br><b>Стандартний: </b> Diesel, EURO, 1.12</br>
+                    <button type="button" class="btn btn-warning" role="button" aria-pressed="true">ЗМІНИТИ ШАБЛОН
+                    </button>
+                    <button type="button" class="btn btn-danger" role="button" aria-pressed="true">ВИДАЛИТИ ШАБЛОН
+                    </button>
+
+                </p>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="sourname" class="col-sm-2 col-form-label">Прізвище</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="sourname" value="admin">
+            <div>
+                <p>
+
+                    <br><b>Середній: </b> Diesel, ECO, 1.36</br>
+                    <button type="button" class="btn btn-warning" role="button" aria-pressed="true">ЗМІНИТИ ШАБЛОН
+                    </button>
+                    <button type="button" class="btn btn-danger" role="button" aria-pressed="true">ВИДАЛИТИ ШАБЛОН
+                    </button>
+
+                </p>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="log" class="col-sm-2 col-form-label">Логін</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="log" value="admin">
+            <div>
+                <p>
+
+                    <br><b>Мінімальний: </b> Petrol, A-95, 1.10</br>
+                    <button type="button" class="btn btn-warning" role="button" aria-pressed="true">ЗМІНИТИ ШАБЛОН
+                    </button>
+                    <button type="button" class="btn btn-danger" role="button" aria-pressed="true">ВИДАЛИТИ ШАБЛОН
+                    </button>
+
+                </p>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="ema" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="ema" value="admin@admin.admin">
+            <div>
+                <p>
+
+                    <br><b>Економний: </b> Gas, ECO, 0.86</br>
+                    <button type="button" class="btn btn-warning" role="button" aria-pressed="true">ЗМІНИТИ ШАБЛОН
+                    </button>
+                    <button type="button" class="btn btn-danger" role="button" aria-pressed="true">ВИДАЛИТИ ШАБЛОН
+                    </button>
+
+                </p>
             </div>
+            <div>
+                <p>
+
+                    <br><b>Максимальний: </b> Diesel, EURO, 1.92</br>
+                    <button type="button" class="btn btn-warning" role="button" aria-pressed="true">ЗМІНИТИ ШАБЛОН
+                    </button>
+                    <button type="button" class="btn btn-danger" role="button" aria-pressed="true">ВИДАЛИТИ ШАБЛОН
+                    </button>
+
+                </p>
+            </div>
+            <p></p>
+            <p>
+                <button type="button" class="btn btn-success" role="button" aria-pressed="true" style="margin-top:5%">
+                    <a  style="text-decoration: none; color: black;" href="http://localhost:8080/user/create-template">ДОДАТИ НОВИЙ ШАБЛОН</a>
+                </button>
+            </p>
         </div>
-        <a href="http://localhost:8080/user/personal-change" class="btn btn-primary active" role="button"
-           aria-pressed="true">Змінити дані</a>
-    </form>
+    </div>
 </div>
 
 <footer id="botside">
@@ -118,4 +149,8 @@
 </footer>
 
 </body>
+
+<script type="text/javascript" src="../../resourses/fuels.json"></script>
+<script type="text/javascript" src="../../resourses/parsing.js"></script>
+
 </html>
